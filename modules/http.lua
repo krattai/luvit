@@ -17,7 +17,7 @@ limitations under the License.
 --]]
 
 exports.name = "luvit/http"
-exports.version = "0.1.1"
+exports.version = "0.1.2"
 
 local net = require('net')
 local url = require('url')
@@ -251,9 +251,6 @@ function ClientRequest:initialize(options, callback)
     socket = net.createConnection(self.port, self.host)
     emit_connect = 'connect'
   end
-
-  socket:on('error',function(...) self:emit('error',...) end)
-
   self.socket = socket
   socket:on(emit_connect, function()
     self.connected = true
