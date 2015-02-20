@@ -12,6 +12,7 @@ clean:
 
 lit:
 	curl -L https://github.com/luvit/lit/raw/0.9.7/web-install.sh | sh
+	rm -rf lit-*
 
 install: luvit
 	install luvit /usr/local/bin
